@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> SetInterval</title>
+</head>
+<body>
+<div class="count">3</div>
+<script type="text/javascript" src="jquery-3.2.1.min.js"></script>
+<script>
+	$(function(){
+		'use strict';
+		var mycount=setInterval(function(){
+			var counter=parseInt($('.count'). html());
+			if(counter!==0){
+				$('.count').html(counter-1);
+
+			}else{
+				clearInterval(mycount);
+				$('.count').html('fished');
+			}
+
+
+
+		},1000)
+	})
+</script>
+</body>
+</html>

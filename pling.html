@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>pling</title>
+	<style>
+	.our-test{
+		background-color: #EEE;
+		height: 200px;
+		width: 200px;
+		/*position: absolute;
+		/*center element
+		left: 50%;
+		margin-left: -100px;
+		top:50%;
+		margin-top: -100px;*/
+	}
+	</style>
+</head>
+<body>
+<div class="our-test">This Is Text</div>
+
+
+<script type="text/javascript" src="jquery-3.2.1.min.js"></script>
+<script >
+ $(function(){
+ 	'use strict'
+;
+$.fn.redmake=function(){ 
+
+	$(this).css('color','#F00');
+	return $(this);
+ }
+ $.fn.elementcenter=function(){
+ 	'use strict';
+ 	$(this).css({
+ 		'position':'absolute',
+ 		'left':($(window).width() - $(this).width())/2,
+ 		'top':($(window).height() - $(this).height())/2
+ 	});
+ }
+
+ $('.our-test').redmake();
+ $('.our-test').elementcenter();
+});
+
+	
+</script>
+</body>
+</html>

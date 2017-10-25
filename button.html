@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>button up</title>
+	<style>
+		section{
+			height:800px; 
+
+		}
+		#scroll{
+			position: fixed;
+			right: 15px;
+			bottom: 10px;
+			z-index: 999;
+			cursor: pointer;
+			display: none;
+		}
+		img{
+			width: 50px;
+			height: 50px;
+		}
+		/*img:hover{
+			background-color:blue; 
+		}*/
+	</style>
+</head>
+<body>
+<section>
+	<h2>Heading</h2>
+	<p>This is p</p>
+</section>
+<section>
+	<h2>Heading</h2>
+	<p>This is p</p>
+</section>
+<section>
+	<h2>Heading</h2>
+	<p>This is p</p>
+</section>
+<div id="scroll">
+<img src="https://cdn.pixabay.com/photo/2017/06/20/14/55/icon-2423351_960_720.png">
+</div>
+<script type="text/javascript" src="jquery-3.2.1.min.js"></script>
+<script>
+$(function(){
+	'use strict';
+	$(window).scroll(function(){
+		if($(this).scrollTop()>=500){
+			$('#scroll').fadeIn();
+		}else{
+			$('#scroll').fadeOut();
+		}
+	});
+	$('#scroll').click(function(){
+		$('html,body').animate({scrollTop:0},600);
+	});
+(function animatebutton(){
+   $('#scroll').animate({
+   	 
+   	 bottom:'20px'
+
+   },1000,function(){
+   	$(this).animate({
+   		bottom:'10px'
+   	},1000,function(){
+   		animatebutton();
+   	});
+   });
+
+
+}());
+
+})	
+
+</script>
+</body>
+</html>

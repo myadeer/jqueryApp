@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Accordion </title>
+	<style>
+	body{
+		background:#b989c2;
+	}
+	 .lesson {
+  margin: 20px
+}
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box
+}
+
+section {
+    
+    text-align: center;
+    font-weight: bold
+}
+
+.item {
+    width: 10%;
+    float: left;
+    background-color: #EEE;
+    height: 200px;
+    line-height: 200px;
+    cursor: pointer;
+    border-right: 1px solid #FFF
+}
+
+.info {
+    float: left;
+    background-color: #DDD;
+    height: 200px;
+    width: 0;
+    display: none
+}
+
+	</style>
+</head>
+<body>
+   <section>
+    <div class="item">
+      Item
+    </div>
+    <div class="info">
+      Info
+    </div>
+    <div class="item">
+      Item
+    </div>
+    <div class="info">
+      Info
+    </div>
+    <div class="item">
+      Item
+    </div>
+    <div class="info">
+      Info
+    </div>
+    <div class="item">
+      Item
+    </div>
+    <div class="info">
+      Info
+    </div>
+    <div class="item">
+      Item
+    </div>
+    <div class="info">
+      Info
+    </div>
+  </section>
+</div>
+<script type="text/javascript" src="jquery-3.2.1.min.js"></script>
+<script> 
+$(function () {
+  // Show First Info
+  $('.info').first().show().animate({ 
+    width: '40%' 
+  });
+  // Show Info On Click
+  $('.item').click(function () {
+    $(this)
+      .next().show().animate({ width: '40%' })
+      .siblings('.info').animate({ width: 0 }, function() { $(this).hide() });
+  });
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>textarea conut</title>
+</head>
+<body>
+<from>
+<textarea id="our" rows="10" cols="50" maxlength="100"  ></textarea>
+<div class="massage">
+<!--<span>100</span>Characts Remaining-->
+</div>
+</from>
+
+
+<script type="text/javascript" src="jquery-3.2.1.min.js"></script>
+<script >
+$(function(){
+	'use strict';
+	 var mytext=$('textarea').attr('maxlength');
+	$('.massage').html('<span>'+mytext+'</span>Characts Remaining');
+	$('textarea').keyup(function(){
+		var mylenght = $(this).val().length,
+		    remchars = mytext - mylenght;
+		$('.massage').html('<span>'+remchars+'</span>Characts Remaining');
+	})
+})
+	
+</script>
+</body>
+</html>

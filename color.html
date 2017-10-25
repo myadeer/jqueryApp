@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> color chang</title>
+	<style>
+	div{
+		margin: 20px 0;
+		padding: 10px;
+		width: 300px;
+		background: #EEE;
+	}
+	ul{list-style:none,padding:0; }
+	ul li{ display:inline-block; width: 20px;height: 20px; cursor: pointer;}
+	</style>
+</head>
+<body>
+<div >MY DIV</div>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<script type="text/javascript" src="jquery-3.2.1.min.js"></script>
+<script>
+$(function(){
+	'use strict';
+	var ul=$('ul li');
+	ul.eq(0).css('background','red');
+	ul.eq(1).css('background','green');
+	ul.eq(2).css('background','blue');
+	ul.eq(3).css('background','black');
+	ul.click(function(){
+		$('div').css({
+			'background':$(this).css('background'),
+			'color':'#fff'
+		})
+	})
+})
+
+</script>
+</body>
+</html>

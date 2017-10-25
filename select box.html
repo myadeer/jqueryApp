@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>sexlect box</title>
+</head>
+<body>
+<select id="years" name="years">
+<option value="x">Select years</option>
+	
+</select>
+<script type="text/javascript" src="jquery-3.2.1.min.js"></script>
+<script>
+$(function(){
+	'use strict';
+	for(var i=1960;i<=2018;i++){
+		$("<option>",{value:i,text:i}).appendTo($('#years')); 
+	}
+})
+
+	
+</script>
+</body>
+</html>
